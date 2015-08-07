@@ -17,6 +17,7 @@ NSString *const cellKey = @"NyankoCell";
 @interface ViewController ()
 
 @property (nonatomic) NSArray *nyankos;
+@property (nonatomic) BOOL loading;
 
 @end
 
@@ -24,18 +25,9 @@ NSString *const cellKey = @"NyankoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    APIRequest *request = [APIRequest new];
-    request.url = @"";
-    request.success = ^(NSDictionary *json) {
-        self.nyankos = [Nyanko nyankosFromJson:json];
-        [self.collectionView reloadData];
-    };
-    request.fail = ^(NSError *error) {
-        NSLog(@"error : %@",error);
-    };
-    [[API sharedInstance] request:request];
     
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([NyankoImageCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:cellKey];
+    [self load];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +38,48 @@ NSString *const cellKey = @"NyankoCell";
     return self.nyankos[indexPath.item];
 }
 
+- (BOOL)loadIfPossible {
+    if (self.loading) {
+        return NO;
+    }
+    [self load];
+}
+
+- (void)load {
+    APIRequest *request = [APIRequest new];
+    request.url = @"";
+    request.success = ^(NSDictionary *json) {
+        self.nyankos = [Nyanko nyankosFromJson:json];
+        [self.collectionView reloadData];
+    };
+    request.fail = ^(NSError *error) {
+        NSLog(@"error : %@",error);
+    };
+    [[API sharedInstance] request:request];
+}
+
+#pragma mark - ScrollView Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.dragging) {
+        return;
+    }
+    
+    [self callScrollLowerSoonIfNeeded:scrollView];
+}
+
+#pragma mark - ScrollView Helper
+
+- (void)callScrollLowerSoonIfNeeded:(UIScrollView*)scrollView {
+    
+}
+
+- (BOOL)scrollLowerSoon {
+    
+}
+
+
+#pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.nyankos.count;
 }
@@ -56,6 +90,7 @@ NSString *const cellKey = @"NyankoCell";
     return cell;
 }
 
+#pragma mark - UICollectionView Delegate
 - (CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)indexPath {
     
     static CGSize size;
