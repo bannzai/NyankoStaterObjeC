@@ -14,6 +14,12 @@
 		050FCDE41B73245300BB103F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 050FCDE31B73245300BB103F /* Images.xcassets */; };
 		050FCDE71B73245300BB103F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050FCDE51B73245300BB103F /* LaunchScreen.xib */; };
 		050FCDF31B73245300BB103F /* NyankoStarterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 050FCDF21B73245300BB103F /* NyankoStarterTests.m */; };
+		050FCE001B7324DC00BB103F /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 050FCDFF1B7324DC00BB103F /* API.m */; };
+		051E77E41B7463EC00270FDC /* Nyanko.m in Sources */ = {isa = PBXBuildFile; fileRef = 051E77E31B7463EC00270FDC /* Nyanko.m */; };
+		058B12E21B74892D00B745FD /* NyankoImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 058B12E01B74892D00B745FD /* NyankoImageCollectionViewCell.m */; };
+		058B12E31B74892D00B745FD /* NyankoImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058B12E11B74892D00B745FD /* NyankoImageCollectionViewCell.xib */; };
+		058B12E61B748F1A00B745FD /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 058B12E51B748F1A00B745FD /* ImageLoader.m */; };
+		059C36FF1B7484690062DF58 /* example_json in Resources */ = {isa = PBXBuildFile; fileRef = 059C36FE1B7484690062DF58 /* example_json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,16 @@
 		050FCDEC1B73245300BB103F /* NyankoStarterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NyankoStarterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		050FCDF11B73245300BB103F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		050FCDF21B73245300BB103F /* NyankoStarterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NyankoStarterTests.m; sourceTree = "<group>"; };
+		050FCDFE1B7324DC00BB103F /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		050FCDFF1B7324DC00BB103F /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
+		051E77E21B7463EC00270FDC /* Nyanko.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nyanko.h; sourceTree = "<group>"; };
+		051E77E31B7463EC00270FDC /* Nyanko.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nyanko.m; sourceTree = "<group>"; };
+		058B12DF1B74892D00B745FD /* NyankoImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NyankoImageCollectionViewCell.h; sourceTree = "<group>"; };
+		058B12E01B74892D00B745FD /* NyankoImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NyankoImageCollectionViewCell.m; sourceTree = "<group>"; };
+		058B12E11B74892D00B745FD /* NyankoImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NyankoImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		058B12E41B748F1A00B745FD /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		058B12E51B748F1A00B745FD /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
+		059C36FE1B7484690062DF58 /* example_json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +97,13 @@
 		050FCDD51B73245300BB103F /* NyankoStarter */ = {
 			isa = PBXGroup;
 			children = (
+				058B12DE1B74890D00B745FD /* Model */,
+				058B12DD1B74890200B745FD /* View */,
 				050FCDDA1B73245300BB103F /* AppDelegate.h */,
 				050FCDDB1B73245300BB103F /* AppDelegate.m */,
 				050FCDDD1B73245300BB103F /* ViewController.h */,
 				050FCDDE1B73245300BB103F /* ViewController.m */,
+				059C36FE1B7484690062DF58 /* example_json */,
 				050FCDE01B73245300BB103F /* Main.storyboard */,
 				050FCDE31B73245300BB103F /* Images.xcassets */,
 				050FCDE51B73245300BB103F /* LaunchScreen.xib */,
@@ -117,6 +136,29 @@
 				050FCDF11B73245300BB103F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		058B12DD1B74890200B745FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				058B12DF1B74892D00B745FD /* NyankoImageCollectionViewCell.h */,
+				058B12E01B74892D00B745FD /* NyankoImageCollectionViewCell.m */,
+				058B12E11B74892D00B745FD /* NyankoImageCollectionViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		058B12DE1B74890D00B745FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				050FCDFE1B7324DC00BB103F /* API.h */,
+				050FCDFF1B7324DC00BB103F /* API.m */,
+				051E77E21B7463EC00270FDC /* Nyanko.h */,
+				051E77E31B7463EC00270FDC /* Nyanko.m */,
+				058B12E41B748F1A00B745FD /* ImageLoader.h */,
+				058B12E51B748F1A00B745FD /* ImageLoader.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				050FCDE21B73245300BB103F /* Main.storyboard in Resources */,
+				059C36FF1B7484690062DF58 /* example_json in Resources */,
 				050FCDE71B73245300BB103F /* LaunchScreen.xib in Resources */,
 				050FCDE41B73245300BB103F /* Images.xcassets in Resources */,
+				058B12E31B74892D00B745FD /* NyankoImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058B12E61B748F1A00B745FD /* ImageLoader.m in Sources */,
+				058B12E21B74892D00B745FD /* NyankoImageCollectionViewCell.m in Sources */,
 				050FCDDF1B73245300BB103F /* ViewController.m in Sources */,
+				051E77E41B7463EC00270FDC /* Nyanko.m in Sources */,
 				050FCDDC1B73245300BB103F /* AppDelegate.m in Sources */,
+				050FCE001B7324DC00BB103F /* API.m in Sources */,
 				050FCDD91B73245300BB103F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NyankoStarter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -360,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NyankoStarter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +468,7 @@
 				050FCDF81B73245300BB103F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		050FCDF91B73245300BB103F /* Build configuration list for PBXNativeTarget "NyankoStarterTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +477,7 @@
 				050FCDFB1B73245300BB103F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
