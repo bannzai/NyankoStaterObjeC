@@ -16,12 +16,20 @@ NSString *const cellKey = @"NyankoCell";
 
 @interface ViewController ()
 
-@property (nonatomic) NSArray *nyankos;
+@property (nonatomic) NSMutableArray *nyankos;
 @property (nonatomic) BOOL loading;
 
 @end
 
 @implementation ViewController
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.nyankos = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,24 +46,29 @@ NSString *const cellKey = @"NyankoCell";
     return self.nyankos[indexPath.item];
 }
 
-- (BOOL)loadIfPossible {
+- (BOOL)loadNext {
     if (self.loading) {
         return NO;
     }
     [self load];
+    return YES;
 }
 
 - (void)load {
     APIRequest *request = [APIRequest new];
     request.url = @"";
     request.success = ^(NSDictionary *json) {
-        self.nyankos = [Nyanko nyankosFromJson:json];
+        [self.nyankos addObjectsFromArray:[Nyanko nyankosFromJson:json]];
         [self.collectionView reloadData];
+        self.loading = NO;
     };
     request.fail = ^(NSError *error) {
         NSLog(@"error : %@",error);
+        self.loading = NO;
     };
     [[API sharedInstance] request:request];
+    
+    self.loading = YES;
 }
 
 #pragma mark - ScrollView Delegate
@@ -71,11 +84,27 @@ NSString *const cellKey = @"NyankoCell";
 #pragma mark - ScrollView Helper
 
 - (void)callScrollLowerSoonIfNeeded:(UIScrollView*)scrollView {
+    float offsetBottomY = scrollView.contentOffset.y + scrollView.bounds.size.height;
+    float contentSizeHeight = MAX(scrollView.contentSize.height, scrollView.frame.size.height - scrollView.contentInset.top);
     
+    float soonThrethould = contentSizeHeight / 3 < 2000 ? contentSizeHeight / 3 : 2000;
+    
+    static BOOL isLowerSoon;
+    
+    if (contentSizeHeight - soonThrethould < offsetBottomY) {
+        if (!isLowerSoon) {
+            [self scrollLowerSoon];
+            isLowerSoon = YES;
+        }
+    }
+    
+    if (contentSizeHeight <= offsetBottomY) {
+        isLowerSoon = NO;
+    }
 }
 
 - (BOOL)scrollLowerSoon {
-    
+    return [self loadNext];
 }
 
 
