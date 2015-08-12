@@ -1,0 +1,2 @@
+PODS_NYANKOSTARTER_REPRO_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Repro/Repro.embeddedframework"
+PODS_NYANKOSTARTER_REPRO_OTHER_LDFLAGS = -ObjC -framework "AVFoundation" -framework "CoreMedia" -framework "CoreVideo" -framework "QuartzCore" -framework "Repro"

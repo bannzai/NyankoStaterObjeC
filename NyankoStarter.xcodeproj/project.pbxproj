@@ -1,485 +1,1185 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		050FCDD91B73245300BB103F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 050FCDD81B73245300BB103F /* main.m */; };
-		050FCDDC1B73245300BB103F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 050FCDDB1B73245300BB103F /* AppDelegate.m */; };
-		050FCDDF1B73245300BB103F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050FCDDE1B73245300BB103F /* ViewController.m */; };
-		050FCDE21B73245300BB103F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 050FCDE01B73245300BB103F /* Main.storyboard */; };
-		050FCDE41B73245300BB103F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 050FCDE31B73245300BB103F /* Images.xcassets */; };
-		050FCDE71B73245300BB103F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050FCDE51B73245300BB103F /* LaunchScreen.xib */; };
-		050FCDF31B73245300BB103F /* NyankoStarterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 050FCDF21B73245300BB103F /* NyankoStarterTests.m */; };
-		050FCE001B7324DC00BB103F /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 050FCDFF1B7324DC00BB103F /* API.m */; };
-		051E77E41B7463EC00270FDC /* Nyanko.m in Sources */ = {isa = PBXBuildFile; fileRef = 051E77E31B7463EC00270FDC /* Nyanko.m */; };
-		058B12E21B74892D00B745FD /* NyankoImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 058B12E01B74892D00B745FD /* NyankoImageCollectionViewCell.m */; };
-		058B12E31B74892D00B745FD /* NyankoImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058B12E11B74892D00B745FD /* NyankoImageCollectionViewCell.xib */; };
-		058B12E61B748F1A00B745FD /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 058B12E51B748F1A00B745FD /* ImageLoader.m */; };
-		059C36FF1B7484690062DF58 /* example_json in Resources */ = {isa = PBXBuildFile; fileRef = 059C36FE1B7484690062DF58 /* example_json */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		050FCDED1B73245300BB103F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 050FCDCB1B73245300BB103F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 050FCDD21B73245300BB103F;
-			remoteInfo = NyankoStarter;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		050FCDD31B73245300BB103F /* NyankoStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyankoStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		050FCDD71B73245300BB103F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		050FCDD81B73245300BB103F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		050FCDDA1B73245300BB103F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		050FCDDB1B73245300BB103F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		050FCDDD1B73245300BB103F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		050FCDDE1B73245300BB103F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		050FCDE11B73245300BB103F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		050FCDE31B73245300BB103F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		050FCDE61B73245300BB103F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		050FCDEC1B73245300BB103F /* NyankoStarterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NyankoStarterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		050FCDF11B73245300BB103F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		050FCDF21B73245300BB103F /* NyankoStarterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NyankoStarterTests.m; sourceTree = "<group>"; };
-		050FCDFE1B7324DC00BB103F /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
-		050FCDFF1B7324DC00BB103F /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
-		051E77E21B7463EC00270FDC /* Nyanko.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nyanko.h; sourceTree = "<group>"; };
-		051E77E31B7463EC00270FDC /* Nyanko.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nyanko.m; sourceTree = "<group>"; };
-		058B12DF1B74892D00B745FD /* NyankoImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NyankoImageCollectionViewCell.h; sourceTree = "<group>"; };
-		058B12E01B74892D00B745FD /* NyankoImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NyankoImageCollectionViewCell.m; sourceTree = "<group>"; };
-		058B12E11B74892D00B745FD /* NyankoImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NyankoImageCollectionViewCell.xib; sourceTree = "<group>"; };
-		058B12E41B748F1A00B745FD /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
-		058B12E51B748F1A00B745FD /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
-		059C36FE1B7484690062DF58 /* example_json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_json; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		050FCDD01B73245300BB103F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		050FCDE91B73245300BB103F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		050FCDCA1B73245300BB103F = {
-			isa = PBXGroup;
-			children = (
-				050FCDD51B73245300BB103F /* NyankoStarter */,
-				050FCDEF1B73245300BB103F /* NyankoStarterTests */,
-				050FCDD41B73245300BB103F /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		050FCDD41B73245300BB103F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				050FCDD31B73245300BB103F /* NyankoStarter.app */,
-				050FCDEC1B73245300BB103F /* NyankoStarterTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		050FCDD51B73245300BB103F /* NyankoStarter */ = {
-			isa = PBXGroup;
-			children = (
-				058B12DE1B74890D00B745FD /* Model */,
-				058B12DD1B74890200B745FD /* View */,
-				050FCDDA1B73245300BB103F /* AppDelegate.h */,
-				050FCDDB1B73245300BB103F /* AppDelegate.m */,
-				050FCDDD1B73245300BB103F /* ViewController.h */,
-				050FCDDE1B73245300BB103F /* ViewController.m */,
-				059C36FE1B7484690062DF58 /* example_json */,
-				050FCDE01B73245300BB103F /* Main.storyboard */,
-				050FCDE31B73245300BB103F /* Images.xcassets */,
-				050FCDE51B73245300BB103F /* LaunchScreen.xib */,
-				050FCDD61B73245300BB103F /* Supporting Files */,
-			);
-			path = NyankoStarter;
-			sourceTree = "<group>";
-		};
-		050FCDD61B73245300BB103F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				050FCDD71B73245300BB103F /* Info.plist */,
-				050FCDD81B73245300BB103F /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		050FCDEF1B73245300BB103F /* NyankoStarterTests */ = {
-			isa = PBXGroup;
-			children = (
-				050FCDF21B73245300BB103F /* NyankoStarterTests.m */,
-				050FCDF01B73245300BB103F /* Supporting Files */,
-			);
-			path = NyankoStarterTests;
-			sourceTree = "<group>";
-		};
-		050FCDF01B73245300BB103F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				050FCDF11B73245300BB103F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		058B12DD1B74890200B745FD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				058B12DF1B74892D00B745FD /* NyankoImageCollectionViewCell.h */,
-				058B12E01B74892D00B745FD /* NyankoImageCollectionViewCell.m */,
-				058B12E11B74892D00B745FD /* NyankoImageCollectionViewCell.xib */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		058B12DE1B74890D00B745FD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				050FCDFE1B7324DC00BB103F /* API.h */,
-				050FCDFF1B7324DC00BB103F /* API.m */,
-				051E77E21B7463EC00270FDC /* Nyanko.h */,
-				051E77E31B7463EC00270FDC /* Nyanko.m */,
-				058B12E41B748F1A00B745FD /* ImageLoader.h */,
-				058B12E51B748F1A00B745FD /* ImageLoader.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		050FCDD21B73245300BB103F /* NyankoStarter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 050FCDF61B73245300BB103F /* Build configuration list for PBXNativeTarget "NyankoStarter" */;
-			buildPhases = (
-				050FCDCF1B73245300BB103F /* Sources */,
-				050FCDD01B73245300BB103F /* Frameworks */,
-				050FCDD11B73245300BB103F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NyankoStarter;
-			productName = NyankoStarter;
-			productReference = 050FCDD31B73245300BB103F /* NyankoStarter.app */;
-			productType = "com.apple.product-type.application";
-		};
-		050FCDEB1B73245300BB103F /* NyankoStarterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 050FCDF91B73245300BB103F /* Build configuration list for PBXNativeTarget "NyankoStarterTests" */;
-			buildPhases = (
-				050FCDE81B73245300BB103F /* Sources */,
-				050FCDE91B73245300BB103F /* Frameworks */,
-				050FCDEA1B73245300BB103F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				050FCDEE1B73245300BB103F /* PBXTargetDependency */,
-			);
-			name = NyankoStarterTests;
-			productName = NyankoStarterTests;
-			productReference = 050FCDEC1B73245300BB103F /* NyankoStarterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		050FCDCB1B73245300BB103F /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = "hirose yudai";
-				TargetAttributes = {
-					050FCDD21B73245300BB103F = {
-						CreatedOnToolsVersion = 6.3.1;
-					};
-					050FCDEB1B73245300BB103F = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 050FCDD21B73245300BB103F;
-					};
-				};
-			};
-			buildConfigurationList = 050FCDCE1B73245300BB103F /* Build configuration list for PBXProject "NyankoStarter" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 050FCDCA1B73245300BB103F;
-			productRefGroup = 050FCDD41B73245300BB103F /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				050FCDD21B73245300BB103F /* NyankoStarter */,
-				050FCDEB1B73245300BB103F /* NyankoStarterTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		050FCDD11B73245300BB103F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				050FCDE21B73245300BB103F /* Main.storyboard in Resources */,
-				059C36FF1B7484690062DF58 /* example_json in Resources */,
-				050FCDE71B73245300BB103F /* LaunchScreen.xib in Resources */,
-				050FCDE41B73245300BB103F /* Images.xcassets in Resources */,
-				058B12E31B74892D00B745FD /* NyankoImageCollectionViewCell.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		050FCDEA1B73245300BB103F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		050FCDCF1B73245300BB103F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				058B12E61B748F1A00B745FD /* ImageLoader.m in Sources */,
-				058B12E21B74892D00B745FD /* NyankoImageCollectionViewCell.m in Sources */,
-				050FCDDF1B73245300BB103F /* ViewController.m in Sources */,
-				051E77E41B7463EC00270FDC /* Nyanko.m in Sources */,
-				050FCDDC1B73245300BB103F /* AppDelegate.m in Sources */,
-				050FCE001B7324DC00BB103F /* API.m in Sources */,
-				050FCDD91B73245300BB103F /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		050FCDE81B73245300BB103F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				050FCDF31B73245300BB103F /* NyankoStarterTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		050FCDEE1B73245300BB103F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 050FCDD21B73245300BB103F /* NyankoStarter */;
-			targetProxy = 050FCDED1B73245300BB103F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		050FCDE01B73245300BB103F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				050FCDE11B73245300BB103F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		050FCDE51B73245300BB103F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				050FCDE61B73245300BB103F /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		050FCDF41B73245300BB103F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		050FCDF51B73245300BB103F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		050FCDF71B73245300BB103F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = NyankoStarter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		050FCDF81B73245300BB103F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = NyankoStarter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		050FCDFA1B73245300BB103F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NyankoStarterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NyankoStarter.app/NyankoStarter";
-			};
-			name = Debug;
-		};
-		050FCDFB1B73245300BB103F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NyankoStarterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NyankoStarter.app/NyankoStarter";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		050FCDCE1B73245300BB103F /* Build configuration list for PBXProject "NyankoStarter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				050FCDF41B73245300BB103F /* Debug */,
-				050FCDF51B73245300BB103F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		050FCDF61B73245300BB103F /* Build configuration list for PBXNativeTarget "NyankoStarter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				050FCDF71B73245300BB103F /* Debug */,
-				050FCDF81B73245300BB103F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		050FCDF91B73245300BB103F /* Build configuration list for PBXNativeTarget "NyankoStarterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				050FCDFA1B73245300BB103F /* Debug */,
-				050FCDFB1B73245300BB103F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 050FCDCB1B73245300BB103F /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>050FCDCA1B73245300BB103F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>050FCDD51B73245300BB103F</string>
+				<string>050FCDEF1B73245300BB103F</string>
+				<string>050FCDD41B73245300BB103F</string>
+				<string>EEEE354A79BA410667CA795D</string>
+				<string>D71F71CD6AC22A15A2FE54F8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDCB1B73245300BB103F</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0630</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>hirose yudai</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>050FCDD21B73245300BB103F</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.3.1</string>
+					</dict>
+					<key>050FCDEB1B73245300BB103F</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.3.1</string>
+						<key>TestTargetID</key>
+						<string>050FCDD21B73245300BB103F</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>050FCDCE1B73245300BB103F</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>050FCDCA1B73245300BB103F</string>
+			<key>productRefGroup</key>
+			<string>050FCDD41B73245300BB103F</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>050FCDD21B73245300BB103F</string>
+				<string>050FCDEB1B73245300BB103F</string>
+			</array>
+		</dict>
+		<key>050FCDCE1B73245300BB103F</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>050FCDF41B73245300BB103F</string>
+				<string>050FCDF51B73245300BB103F</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>050FCDCF1B73245300BB103F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>058B12E61B748F1A00B745FD</string>
+				<string>058B12E21B74892D00B745FD</string>
+				<string>050FCDDF1B73245300BB103F</string>
+				<string>051E77E41B7463EC00270FDC</string>
+				<string>050FCDDC1B73245300BB103F</string>
+				<string>050FCE001B7324DC00BB103F</string>
+				<string>050FCDD91B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>050FCDD01B73245300BB103F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FA93A672E7F3BB175006D40D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>050FCDD11B73245300BB103F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>050FCDE21B73245300BB103F</string>
+				<string>059C36FF1B7484690062DF58</string>
+				<string>050FCDE71B73245300BB103F</string>
+				<string>050FCDE41B73245300BB103F</string>
+				<string>058B12E31B74892D00B745FD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>050FCDD21B73245300BB103F</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>050FCDF61B73245300BB103F</string>
+			<key>buildPhases</key>
+			<array>
+				<string>C422E35F3755A18422DF19D8</string>
+				<string>050FCDCF1B73245300BB103F</string>
+				<string>050FCDD01B73245300BB103F</string>
+				<string>050FCDD11B73245300BB103F</string>
+				<string>443BEF281B2A6D42274115A6</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>NyankoStarter</string>
+			<key>productName</key>
+			<string>NyankoStarter</string>
+			<key>productReference</key>
+			<string>050FCDD31B73245300BB103F</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>050FCDD31B73245300BB103F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>NyankoStarter.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>050FCDD41B73245300BB103F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>050FCDD31B73245300BB103F</string>
+				<string>050FCDEC1B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDD51B73245300BB103F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>058B12DE1B74890D00B745FD</string>
+				<string>058B12DD1B74890200B745FD</string>
+				<string>050FCDDA1B73245300BB103F</string>
+				<string>050FCDDB1B73245300BB103F</string>
+				<string>050FCDDD1B73245300BB103F</string>
+				<string>050FCDDE1B73245300BB103F</string>
+				<string>059C36FE1B7484690062DF58</string>
+				<string>050FCDE01B73245300BB103F</string>
+				<string>050FCDE31B73245300BB103F</string>
+				<string>050FCDE51B73245300BB103F</string>
+				<string>050FCDD61B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>NyankoStarter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDD61B73245300BB103F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>050FCDD71B73245300BB103F</string>
+				<string>050FCDD81B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDD71B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDD81B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDD91B73245300BB103F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>050FCDD81B73245300BB103F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>050FCDDA1B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDDB1B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDDC1B73245300BB103F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>050FCDDB1B73245300BB103F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>050FCDDD1B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDDE1B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDDF1B73245300BB103F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>050FCDDE1B73245300BB103F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>050FCDE01B73245300BB103F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>050FCDE11B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDE11B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDE21B73245300BB103F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>050FCDE01B73245300BB103F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>050FCDE31B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDE41B73245300BB103F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>050FCDE31B73245300BB103F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>050FCDE51B73245300BB103F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>050FCDE61B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDE61B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDE71B73245300BB103F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>050FCDE51B73245300BB103F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>050FCDE81B73245300BB103F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>050FCDF31B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>050FCDE91B73245300BB103F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>050FCDEA1B73245300BB103F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>050FCDEB1B73245300BB103F</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>050FCDF91B73245300BB103F</string>
+			<key>buildPhases</key>
+			<array>
+				<string>050FCDE81B73245300BB103F</string>
+				<string>050FCDE91B73245300BB103F</string>
+				<string>050FCDEA1B73245300BB103F</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>050FCDEE1B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>NyankoStarterTests</string>
+			<key>productName</key>
+			<string>NyankoStarterTests</string>
+			<key>productReference</key>
+			<string>050FCDEC1B73245300BB103F</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>050FCDEC1B73245300BB103F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>NyankoStarterTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>050FCDED1B73245300BB103F</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>050FCDCB1B73245300BB103F</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>050FCDD21B73245300BB103F</string>
+			<key>remoteInfo</key>
+			<string>NyankoStarter</string>
+		</dict>
+		<key>050FCDEE1B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>050FCDD21B73245300BB103F</string>
+			<key>targetProxy</key>
+			<string>050FCDED1B73245300BB103F</string>
+		</dict>
+		<key>050FCDEF1B73245300BB103F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>050FCDF21B73245300BB103F</string>
+				<string>050FCDF01B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>NyankoStarterTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDF01B73245300BB103F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>050FCDF11B73245300BB103F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDF11B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDF21B73245300BB103F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NyankoStarterTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDF31B73245300BB103F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>050FCDF21B73245300BB103F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>050FCDF41B73245300BB103F</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>050FCDF51B73245300BB103F</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>050FCDF61B73245300BB103F</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>050FCDF71B73245300BB103F</string>
+				<string>050FCDF81B73245300BB103F</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>050FCDF71B73245300BB103F</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A209A33C18EB6AA337019BEA</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>NyankoStarter/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>050FCDF81B73245300BB103F</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>346A58F518633347730EFDCD</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>NyankoStarter/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>050FCDF91B73245300BB103F</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>050FCDFA1B73245300BB103F</string>
+				<string>050FCDFB1B73245300BB103F</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>050FCDFA1B73245300BB103F</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>NyankoStarterTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/NyankoStarter.app/NyankoStarter</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>050FCDFB1B73245300BB103F</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>NyankoStarterTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/NyankoStarter.app/NyankoStarter</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>050FCDFE1B7324DC00BB103F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>API.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCDFF1B7324DC00BB103F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>API.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>050FCE001B7324DC00BB103F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>050FCDFF1B7324DC00BB103F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>051E77E21B7463EC00270FDC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Nyanko.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>051E77E31B7463EC00270FDC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Nyanko.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>051E77E41B7463EC00270FDC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>051E77E31B7463EC00270FDC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>058B12DD1B74890200B745FD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>058B12DF1B74892D00B745FD</string>
+				<string>058B12E01B74892D00B745FD</string>
+				<string>058B12E11B74892D00B745FD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>058B12DE1B74890D00B745FD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>050FCDFE1B7324DC00BB103F</string>
+				<string>050FCDFF1B7324DC00BB103F</string>
+				<string>051E77E21B7463EC00270FDC</string>
+				<string>051E77E31B7463EC00270FDC</string>
+				<string>058B12E41B748F1A00B745FD</string>
+				<string>058B12E51B748F1A00B745FD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Model</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>058B12DF1B74892D00B745FD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NyankoImageCollectionViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>058B12E01B74892D00B745FD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NyankoImageCollectionViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>058B12E11B74892D00B745FD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>NyankoImageCollectionViewCell.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>058B12E21B74892D00B745FD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>058B12E01B74892D00B745FD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>058B12E31B74892D00B745FD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>058B12E11B74892D00B745FD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>058B12E41B748F1A00B745FD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ImageLoader.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>058B12E51B748F1A00B745FD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ImageLoader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>058B12E61B748F1A00B745FD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>058B12E51B748F1A00B745FD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>059C36FE1B7484690062DF58</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>example_json</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>059C36FF1B7484690062DF58</key>
+		<dict>
+			<key>fileRef</key>
+			<string>059C36FE1B7484690062DF58</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>346A58F518633347730EFDCD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-NyankoStarter.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-NyankoStarter/Pods-NyankoStarter.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>443BEF281B2A6D42274115A6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-NyankoStarter/Pods-NyankoStarter-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>708287B07BE50F844CA52985</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-NyankoStarter.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A209A33C18EB6AA337019BEA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-NyankoStarter.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-NyankoStarter/Pods-NyankoStarter.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C422E35F3755A18422DF19D8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>D71F71CD6AC22A15A2FE54F8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>708287B07BE50F844CA52985</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEE354A79BA410667CA795D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A209A33C18EB6AA337019BEA</string>
+				<string>346A58F518633347730EFDCD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA93A672E7F3BB175006D40D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>708287B07BE50F844CA52985</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>050FCDCB1B73245300BB103F</string>
+</dict>
+</plist>
