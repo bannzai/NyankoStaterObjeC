@@ -16,7 +16,7 @@ NSString *const cellKey = @"NyankoCell";
 
 @interface ViewController ()
 
-@property (nonatomic) NSMutableArray *nyankos;
+@property (nonatomic) Nyankos *nyankos;
 @property (nonatomic) BOOL loading;
 
 @end
@@ -26,7 +26,8 @@ NSString *const cellKey = @"NyankoCell";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.nyankos = [NSMutableArray array];
+        self.nyankos = [Nyankos new];
+        self.nyankos.nextUrl = @"";
     }
     return self;
 }
@@ -43,7 +44,7 @@ NSString *const cellKey = @"NyankoCell";
 }
 
 - (Nyanko*)nyankoAtIndexPath:(NSIndexPath*)indexPath {
-    return self.nyankos[indexPath.item];
+    return self.nyankos.array[indexPath.item];
 }
 
 - (BOOL)loadNext {
@@ -56,9 +57,9 @@ NSString *const cellKey = @"NyankoCell";
 
 - (void)load {
     APIRequest *request = [APIRequest new];
-    request.url = @"";
+    request.url = self.nyankos.nextUrl;
     request.success = ^(NSDictionary *json) {
-        [self.nyankos addObjectsFromArray:[Nyanko nyankosFromJson:json]];
+        [self.nyankos addListFromJson:json];
         [self.collectionView reloadData];
         self.loading = NO;
     };
@@ -110,7 +111,7 @@ NSString *const cellKey = @"NyankoCell";
 
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.nyankos.count;
+    return self.nyankos.array.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

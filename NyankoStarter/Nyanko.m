@@ -65,3 +65,16 @@
 }
 
 @end
+
+@implementation Nyankos
+
+- (void)addListFromJson:(NSDictionary *)json {
+    [super addListFromJson:json];
+    
+    [self.array addObjectsFromArray:[Nyanko nyankosFromJson:json]];
+    
+    NSDictionary *partPagenation = json[@"pagination"];
+    self.nextUrl = partPagenation[@"next_url"];
+}
+
+@end

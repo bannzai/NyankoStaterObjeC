@@ -39,3 +39,7 @@ typedef enum {
 
 @end
 
+#import "ListModel.h"
+@interface Nyankos : ListModel
+
+@end
