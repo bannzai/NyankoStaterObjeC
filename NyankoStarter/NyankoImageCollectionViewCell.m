@@ -47,7 +47,7 @@
 
 - (void)setWidthConstraint:(CGFloat)width {
     NSLayoutConstraint *widthConstraint = nil;
-    for (NSLayoutConstraint *constraint in self.constraints) {
+    for (NSLayoutConstraint *constraint in self.contentView.constraints) {
         if (constraint.firstItem == self.contentView && constraint.firstAttribute == NSLayoutAttributeWidth && constraint.relation == NSLayoutRelationEqual) {
             widthConstraint = constraint;
             break;
