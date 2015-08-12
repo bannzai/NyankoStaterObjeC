@@ -42,22 +42,22 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
     NSURLSessionDownloadTask *task = [session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        if (error) {
-            request.fail(error);
-            return;
-        }
-        
-        NSData *data = [NSData dataWithContentsOfURL:location];
-        
-        NSError* errorParse = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&errorParse];
-        
-        if (errorParse) {
-            request.fail(errorParse);
-            return;
-        }
-        
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                request.fail(error);
+                return;
+            }
+            
+            NSData *data = [NSData dataWithContentsOfURL:location];
+            
+            NSError* errorParse = nil;
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&errorParse];
+            
+            if (errorParse) {
+                request.fail(errorParse);
+                return;
+            }
+            
             request.success(json);
         });
     }];
