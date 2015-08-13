@@ -74,7 +74,7 @@ NSString *const cellKey = @"NyankoCell";
 
 - (void)collectionView:(UICollectionView*)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     Nyanko *nyanko = [self nyankoAtIndexPath:indexPath];
-    NSURL *url = [NSURL URLWithString:nyanko.image.url];
+    NSURL *url = [NSURL URLWithString:nyanko.linkUrl];
     [[UIApplication sharedApplication] openURL:url];
 }
 
