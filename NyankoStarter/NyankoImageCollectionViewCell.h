@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UICollectionViewCell+Utility.h"
 
 @class Nyanko;
 @interface NyankoImageCollectionViewCell : UICollectionViewCell
@@ -14,7 +15,5 @@
 
 @property (nonatomic) Nyanko *nyanko;
 
-- (CGSize)fittingSizeWithWidth:(CGFloat)width;
-+ (instancetype)view;
 
 @end
