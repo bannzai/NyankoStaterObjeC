@@ -3,6 +3,7 @@
 
 target 'NyankoStarter' do
 pod 'Repro'
+pod 'Realm'
 
 end
 
