@@ -9,7 +9,8 @@
 #ifndef NyankoStarter_Nyanko_PrefixHeader_pch
 #define NyankoStarter_Nyanko_PrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Realm/Realm.h>
 
+
+#define DEFAULT_REALM [RLMRealm defaultRealm]
 #endif

@@ -31,6 +31,11 @@
     nyankoImage.height = [dic[@"heigth"] integerValue];
     nyankoImage.url = dic[@"url"];
     
+    
+    [DEFAULT_REALM transactionWithBlock:^{
+        [DEFAULT_REALM addObject:nyankoImage];
+    }];
+    
     return nyankoImage;
 }
 
@@ -60,6 +65,10 @@
     
     nyanko.image = [NyankoImage nyankoImageFromPartJson:json[@"images"]];
     nyanko.linkUrl = json[@"link"];
+    
+    [DEFAULT_REALM transactionWithBlock:^{
+        [DEFAULT_REALM addObject:nyanko];
+    }];
     
     return nyanko;
 }

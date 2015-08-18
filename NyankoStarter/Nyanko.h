@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RLMObject.h"
 
 typedef enum {
     
@@ -17,22 +18,22 @@ typedef enum {
     
 }NyankoImageType;
 
-@interface NyankoImage : NSObject
+@interface NyankoImage : RLMObject
 
-@property (nonatomic) NyankoImageType type;
-@property (nonatomic) NSString *url;
-@property (nonatomic) NSInteger width;
-@property (nonatomic) NSInteger height;
+@property  NyankoImageType type;
+@property  NSString *url;
+@property  NSInteger width;
+@property  NSInteger height;
 
 + (NSArray*)nyankoImagesFromJson:(NSDictionary*)json;
 + (instancetype)nyankoImageFromPartJson:(NSDictionary*)json;
 
 @end
 
-@interface Nyanko : NSObject
+@interface Nyanko : RLMObject
 
-@property (nonatomic) NSString *linkUrl;
-@property (nonatomic) NyankoImage *image;
+@property  NSString *linkUrl;
+@property  NyankoImage *image;
 
 + (NSArray*)nyankosFromJson:(NSDictionary*)json;
 + (instancetype)nyankoFromPartJson:(NSDictionary*)json;

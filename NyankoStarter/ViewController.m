@@ -15,19 +15,38 @@
 NSString *const cellKey = @"NyankoCell";
 
 @interface ViewController ()
+@property (nonatomic) NSMutableArray *nyankos;
+@property (nonatomic) NSString *nextUrl;
 
-@property (nonatomic) NSArray *nyankos;
+@end
+
+@interface ViewController (RLM)
+
+@property (nonatomic) RLMNotificationToken *notification;
 
 @end
 
 @implementation ViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
+            NSLog(@"notification : %@", notification);
+            NSLog(@"realm : %@", realm);
+        }];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     APIRequest *request = [APIRequest new];
     request.url = @"";
     request.success = ^(NSDictionary *json) {
-        self.nyankos = [Nyanko nyankosFromJson:json];
+        self.nextUrl = [self nextUrlFromJson:json];
+        self.nyankos = [NSMutableArray arrayWithArray:[Nyanko nyankosFromJson:json]];
         [self.collectionView reloadData];
     };
     request.fail = ^(NSError *error) {
@@ -35,11 +54,37 @@ NSString *const cellKey = @"NyankoCell";
     };
     [[API sharedInstance] request:request];
     
+    [self setupNavigationBar];
+    
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([NyankoImageCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:cellKey];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)setupNavigationBar {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
+}
+
+- (NSString*)nextUrlFromJson:(NSDictionary*)json {
+    NSDictionary *dicPagination = json[@"pagination"];
+    return dicPagination[@"next_url"];
+}
+
+- (void)add {
+    [self loadNext];
+}
+
+- (void)loadNext {
+    APIRequest *request = [APIRequest new];
+    request.url = self.nextUrl;
+    request.success = ^(NSDictionary *json) {
+        self.nextUrl = [self nextUrlFromJson:json];
+        [self.nyankos addObjectsFromArray:[Nyanko nyankosFromJson:json]];
+        [self.collectionView reloadData];
+    };
+    request.fail = ^(NSError *error) {
+        NSLog(@"error : %@",error);
+    };
+    [[API sharedInstance] request:request];
+    
 }
 
 - (Nyanko*)nyankoAtIndexPath:(NSIndexPath*)indexPath {
@@ -74,7 +119,7 @@ NSString *const cellKey = @"NyankoCell";
 
 - (void)collectionView:(UICollectionView*)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     Nyanko *nyanko = [self nyankoAtIndexPath:indexPath];
-    NSURL *url = [NSURL URLWithString:nyanko.image.url];
+    NSURL *url = [NSURL URLWithString:nyanko.linkUrl];
     [[UIApplication sharedApplication] openURL:url];
 }
 
