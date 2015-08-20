@@ -64,13 +64,27 @@
     Nyanko *nyanko = [self new];
     
     nyanko.image = [NyankoImage nyankoImageFromPartJson:json[@"images"]];
+    nyanko.filter = json[@"filter"];
     nyanko.linkUrl = json[@"link"];
+    nyanko.contentType = [Nyanko getContentTypeFromKey:json[@"type"]];
     
     [DEFAULT_REALM transactionWithBlock:^{
         [DEFAULT_REALM addObject:nyanko];
     }];
     
     return nyanko;
+}
+
++ (NyankoContentType)getContentTypeFromKey:(NSString*)key {
+    if ([key isEqualToString:@"image"]) { return NyankoContentTypeImage; }
+    if ([key isEqualToString:@"video"]) { return NyankoContentTypeVideo; }
+    return NyankoContentTypeUnknown;
+}
+
++ (NSArray*)ignoredProperties {
+    return @[
+             @"contentType",
+             ];
 }
 
 @end

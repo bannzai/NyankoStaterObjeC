@@ -14,9 +14,12 @@
 
 NSString *const cellKey = @"NyankoCell";
 
+
 @interface ViewController ()
 @property (nonatomic) NSMutableArray *nyankos;
 @property (nonatomic) NSString *nextUrl;
+
+@property (nonatomic) NSMutableArray *filters;
 
 @end
 
@@ -31,11 +34,21 @@ NSString *const cellKey = @"NyankoCell";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
-            NSLog(@"notification : %@", notification);
-            NSLog(@"realm : %@", realm);
-        }];
     }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+//        self.notification = [RLMRealm.defaultRealm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
+//            NSLog(@"notification : %@", notification);
+//            NSLog(@"realm : %@", realm);
+//        }];
+        _filters = [NSMutableArray array];
+    }
+    
     return self;
 }
 
@@ -60,16 +73,67 @@ NSString *const cellKey = @"NyankoCell";
 }
 
 - (void)setupNavigationBar {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
+    UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
+    UIBarButtonItem *refine = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(refine)];
+    self.navigationItem.rightBarButtonItems = @[add,refine];
+}
+
+- (void)add {
+    [self loadNext];
+}
+
+- (void)refine {
+    RLMResults *results = [Nyanko allObjects];
+    
+    void(^addMessage)(NSString *) = ^void(NSString *message) {
+        if (!_filters.count) {
+            [_filters addObject:message];
+            return;
+        }
+        
+        for (NSString *filter in _filters) {
+            if ([message isEqualToString:filter]) {
+                return;
+            }
+        }
+        [_filters addObject:message];
+    };
+    
+    for (Nyanko *nyanko in results) {
+        addMessage(nyanko.filter);
+    }
+    
+    UIAlertController *alert = [[UIAlertController alloc] init];
+    alert.title = @"filter";
+    
+    for (NSString *message in _filters) {
+        
+        [alert addAction:[UIAlertAction actionWithTitle:message style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            RLMResults *results = [Nyanko objectsWhere:[NSString stringWithFormat:@"filter = '%@'", message]]; // How to convert RLMResutls -> RLMArray ??
+            
+            NSMutableArray *nyankos = [NSMutableArray array];
+            
+            for (Nyanko *nyanko in results) {
+                [nyankos addObject:nyanko];
+            }
+            
+            self.nyankos = [NSMutableArray arrayWithArray:nyankos];
+            
+            [self.collectionView reloadData];
+        }]];
+        
+    }
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"UIAlertActionStyleCancel");
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (NSString*)nextUrlFromJson:(NSDictionary*)json {
     NSDictionary *dicPagination = json[@"pagination"];
     return dicPagination[@"next_url"];
-}
-
-- (void)add {
-    [self loadNext];
 }
 
 - (void)loadNext {

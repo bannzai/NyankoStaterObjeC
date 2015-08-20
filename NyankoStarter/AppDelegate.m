@@ -20,6 +20,7 @@
     // Override point for customization after application launch.
 //    [Repro setup:@""];
 //    [Repro startRecording];
+    [[NSFileManager defaultManager] removeItemAtPath:[RLMRealm defaultRealmPath] error:nil];
     return YES;
 }
 

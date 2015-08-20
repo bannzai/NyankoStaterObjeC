@@ -18,12 +18,20 @@ typedef enum {
     
 }NyankoImageType;
 
+typedef enum {
+    NyankoContentTypeUnknown = -1 ,
+    NyankoContentTypeImage,
+    NyankoContentTypeVideo,
+}NyankoContentType;
+
+RLM_ARRAY_TYPE(Nyanko)
+
 @interface NyankoImage : RLMObject
 
-@property  NyankoImageType type;
-@property  NSString *url;
-@property  NSInteger width;
-@property  NSInteger height;
+@property NyankoImageType type;
+@property NSString *url;
+@property NSInteger width;
+@property NSInteger height;
 
 + (NSArray*)nyankoImagesFromJson:(NSDictionary*)json;
 + (instancetype)nyankoImageFromPartJson:(NSDictionary*)json;
@@ -32,8 +40,10 @@ typedef enum {
 
 @interface Nyanko : RLMObject
 
-@property  NSString *linkUrl;
-@property  NyankoImage *image;
+@property NSString *linkUrl;
+@property NyankoImage *image;
+@property NSString *filter;
+@property NyankoContentType contentType;
 
 + (NSArray*)nyankosFromJson:(NSDictionary*)json;
 + (instancetype)nyankoFromPartJson:(NSDictionary*)json;
