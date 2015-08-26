@@ -1,9 +1,0 @@
-CLANG_CXX_LANGUAGE_STANDARD = compiler-default
-FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Repro/Repro.embeddedframework"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Realm" "${PODS_ROOT}/Headers/Public/Realm/realm" "${PODS_ROOT}/Headers/Public/Repro" "${PODS_ROOT}/Headers/Public/Repro/Repro"
-LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Realm/core"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Realm" -isystem "${PODS_ROOT}/Headers/Public/Realm/realm" -isystem "${PODS_ROOT}/Headers/Public/Repro" -isystem "${PODS_ROOT}/Headers/Public/Repro/Repro"
-OTHER_CPLUSPLUSFLAGS = -std=c++1y $(inherited) -std=c++1y $(inherited) -std=c++1y $(inherited)
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Realm" -l"c++" -l"realm-ios" -framework "AVFoundation" -framework "CoreMedia" -framework "CoreVideo" -framework "QuartzCore" -framework "Repro"
-PODS_ROOT = ${SRCROOT}/Pods
